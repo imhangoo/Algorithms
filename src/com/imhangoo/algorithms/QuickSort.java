@@ -1,8 +1,9 @@
 package com.imhangoo.algorithms;
 
 public class QuickSort {
+	
 	public static void quickSort(int[] array, int startIndex, int endIndex){
-		// Tried to use startIndex==endIndex, get stackOverflowError
+		// Tried to use "startIndex==endIndex", got StackOverflowError
 		if(startIndex>=endIndex) return;
 		
 		int pivotIndex = partition(array, startIndex, endIndex);
