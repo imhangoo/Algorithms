@@ -1,12 +1,13 @@
 import java.util.Vector;
-
+/**
+ * Enqueue, Dequeue, find Max: all with O(1) amortized cost
+ */
 public class MaxQueue {
 	private Vector<Integer> queue1 = new Vector<Integer>();
 	private Vector<Integer> queue2 = new Vector<Integer>();
 	private int front1 = 0, rear1 = 0;
 	private int front2 = 0, rear2 = 0;
 
-	
 	public void enqueue(int value){
 		// operations on queue1
 		queue1.add(value);
@@ -14,8 +15,7 @@ public class MaxQueue {
 		// operations on queue2
 		if(rear2==0 || value <= queue2.get(rear2-1)){
 			queue2.add(value);
-			rear2++;	
-			
+			rear2++;		
 		}else{
 			queue2.set(rear2-1, value);
 			while(rear2>1 && queue2.get(rear2-1)>queue2.get(rear2-2)){
